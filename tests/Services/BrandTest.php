@@ -13,7 +13,7 @@ class BrandTest extends TestCase
 {
     protected $anymarket;
 
-    public function setUp()
+    protected function setUp(): void
     {
         parent::setUp();
 
@@ -23,7 +23,7 @@ class BrandTest extends TestCase
         );
     }
 
-    public function test_get_brand()
+    public function test_get_brand(): void
     {
         $body = __DIR__.'/../ResponseSamples/Brand/BrandGet.json';
         $http = $this->mockHttpClient($body, 200);
@@ -37,7 +37,7 @@ class BrandTest extends TestCase
         $this->assertArrayHasKey('page', $brand);
     }
 
-    public function test_find_brand()
+    public function test_find_brand(): void
     {
         $body = __DIR__.'/../ResponseSamples/Brand/Brand.json';
         $http = $this->mockHttpClient($body, 200);
@@ -51,7 +51,7 @@ class BrandTest extends TestCase
         $this->assertArrayHasKey('partnerId', $brand);
     }
 
-    public function test_unprocessable_brand()
+    public function test_unprocessable_brand(): void
     {
         $body = __DIR__.'/../ResponseSamples/Brand/Brand.json';
         $http = $this->mockHttpClient($body, 422);
@@ -60,10 +60,10 @@ class BrandTest extends TestCase
 
         $this->expectException(AnymarketValidationException::class);
 
-        $brand = $brand->create([]);
+        $brand->create([]);
     }
 
-    public function test_find_brand_not_found()
+    public function test_find_brand_not_found(): void
     {
         $body = __DIR__.'/../ResponseSamples/Brand/Brand.json';
         $http = $this->mockHttpClient($body, 404);
@@ -72,10 +72,10 @@ class BrandTest extends TestCase
 
         $this->expectException(AnymarketException::class);
 
-        $brand = $brand->find(123);
+        $brand->find(123);
     }
 
-    public function test_create_brand()
+    public function test_create_brand(): void
     {
         $body = __DIR__.'/../ResponseSamples/Brand/Brand.json';
         $http = $this->mockHttpClient($body, 200);
@@ -92,7 +92,7 @@ class BrandTest extends TestCase
         $this->assertArrayHasKey('partnerId', $brand);
     }
 
-    public function test_update_brand()
+    public function test_update_brand(): void
     {
         $body = __DIR__.'/../ResponseSamples/Brand/Brand.json';
         $http = $this->mockHttpClient($body, 200);
@@ -109,7 +109,7 @@ class BrandTest extends TestCase
         $this->assertArrayHasKey('partnerId', $brand);
     }
 
-    public function test_delete_brand()
+    public function test_delete_brand(): void
     {
         $body = __DIR__.'/../ResponseSamples/NoContent.json';
 

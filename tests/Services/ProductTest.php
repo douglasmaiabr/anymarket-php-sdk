@@ -13,7 +13,7 @@ class ProductTest extends TestCase
 {
     protected $anymarket;
 
-    public function setUp()
+    protected function setUp(): void
     {
         parent::setUp();
 

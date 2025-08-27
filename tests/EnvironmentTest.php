@@ -7,12 +7,12 @@ use Yampi\Anymarket\Services\Environment;
 
 class EnvironmentTest extends TestCase
 {
-    public function test_environment_sandbox()
+    public function testEnvironmentSandbox(): void
     {
         $this->assertInstanceOf(EnvironmentInterface::class, Environment::sandbox());
     }
 
-    public function test_environment_production()
+    public function testEnvironmentProduction(): void
     {
         $this->assertInstanceOf(EnvironmentInterface::class, Environment::production());
     }

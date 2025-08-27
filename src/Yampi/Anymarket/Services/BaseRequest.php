@@ -16,6 +16,8 @@ abstract class BaseRequest implements BaseRequestInterface
 
     protected $http;
 
+    protected $anymarket;
+
     public function __construct(Anymarket $anymarket, $service, $http)
     {
         $this->anymarket = $anymarket;

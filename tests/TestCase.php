@@ -10,15 +10,7 @@ use PHPUnit\Framework\TestCase as Test;
 
 class TestCase extends Test
 {
-    /**
-     * Mocks Guzzle HTTP client.
-     *
-     * @param string|null $responseBodyFile
-     * @param int         $httpCode
-     *
-     * @return \GuzzleHttp\Client
-     */
-    protected function mockHttpClient($responseBodyFile = null, $httpCode = 200)
+    protected function mockHttpClient($responseBodyFile = null, $httpCode = 200): Client
     {
         $mock = new MockHandler();
 

@@ -13,7 +13,7 @@ class CategoryTest extends TestCase
 {
     protected $anymarket;
 
-    public function setUp()
+    protected function setUp(): void
     {
         parent::setUp();
 
@@ -23,7 +23,7 @@ class CategoryTest extends TestCase
         );
     }
 
-    public function test_get_category()
+    public function test_get_category(): void
     {
         $body = __DIR__.'/../ResponseSamples/Category/CategoryGet.json';
         $http = $this->mockHttpClient($body, 200);

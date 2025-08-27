@@ -40,6 +40,8 @@ class Anymarket
 
     protected $callback;
 
+    protected $http;
+
     public function __construct($token, Environment $environment, $http = null)
     {
         $this->endpoint = $environment->getEndpoint();

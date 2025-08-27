@@ -13,18 +13,19 @@
         }
     },
     "require": {
-        "guzzlehttp/guzzle": "^6.3"
+      "php": "^8.1 || ^8.2 || ^8.3",
+      "guzzlehttp/guzzle": "^7.8"
+
     },
     "require-dev": {
-        "squizlabs/php_codesniffer": "~2.3",
-        "larapack/dd": "^1.1",
-        "codeclimate/php-test-reporter": "~0.3",
-        "mockery/mockery": "~0.9",
-        "phpunit/phpunit": "^6.4"
+      "squizlabs/php_codesniffer": "^3.9",
+      "larapack/dd": "^1.1",
+      "phpunit/phpunit": "^10.5",
+      "mockery/mockery": "^1.6"
     },
     "scripts": {
-        "test": "phpunit --colors=always",
-        "check-style": "phpcs -p --standard=PSR2 --runtime-set ignore_errors_on_exit 1 --runtime-set ignore_warnings_on_exit 1 src tests",
-        "fix-style": "phpcbf -p --standard=PSR2 --runtime-set ignore_errors_on_exit 1 --runtime-set ignore_warnings_on_exit 1 src tests"
+      "test": "phpunit --colors=always",
+      "check-style": "phpcs -p --standard=PSR12 src tests",
+      "fix-style": "phpcbf -p --standard=PSR12 src tests"
     }
 }
